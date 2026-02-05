@@ -354,7 +354,7 @@ footer {
     flex-direction: column;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.75);
 
 
   }
