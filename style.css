@@ -259,13 +259,12 @@ nav a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.7),
-    rgba(177, 177, 177, 0.25),
-    transparent
-  );
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
+
 
 .project-link:hover .project {
   transform: translateY(-8px) scale(1.03);
@@ -278,8 +277,17 @@ nav a:hover {
 
 .project h3,
 .project p {
-  position: relative;
-  z-index: 2;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.project-link:hover .project h3,
+.project-link:hover .project p {
+  opacity: 1;
+  transform: translateY(0);
+  color: white;
 }
 
 /* WHATSAPP */
@@ -398,4 +406,15 @@ footer {
     max-width: 340px;
     margin: 0 auto;
   }
+
+  .project h3,
+.project p {
+  opacity: 1;
+  transform: none;
+}
+
+.project::before {
+  opacity: 1;
+}
+
 }
